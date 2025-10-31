@@ -3,11 +3,13 @@ from flask import Flask, render_template
 from supabase import create_client
 
 
+SUPABASE_URL = "https://csgiuqsmzaohurfstbtj.supabase.co"
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNzZ2l1cXNtemFvaHVyZnN0YnRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5NDExODksImV4cCI6MjA3NzUxNzE4OX0.cHDdBRJUEDkFWehhFoukwe0tpmhuOf_DpXPWrRcVTPc"
 
 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-app = Flask(__name__)
+app = Flask("bulochka_pribulochka")
 
 
 @app.route("/")
@@ -65,4 +67,4 @@ def student_view(user_id):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080, debug=True)
+    app.run(debug=True)
